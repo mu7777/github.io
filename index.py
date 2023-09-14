@@ -1,1 +1,1 @@
-<script>ハローワールド</script>
+print("おはよう世界")
