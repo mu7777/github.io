@@ -1,12 +1,65 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>むうのホームページ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フェードインメニュー</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .menu-button {
+    position: fixed;
+    top: 20px;
+    left: 10px; /* メニューボタンの初期位置を調整 */
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  /* メニューの文字に赤い枠を追加 */
+  .menu-button{
+    border: 5px solid red;
+    padding: 5px;
+    display: inline-block;
+  }
+</style>
 </head>
 <body>
-    <h1>テスト中</h1 >
-    <h2>これはむうが作成中のホームページです。</h2>
-    <p>あいうえお</p>
+  <div class="menu-button" id="menuButton">メニュー</div>
+  <div class="menu-container" id="menuContainer">
+    <h2>メニュー</h2>
+    <ul>
+      <li><a href="#1">概要</a></li>
+      <li><a href="#2">あ</a></li>
+      <li><a href="#3">その他</a></li>
+    </ul>
+  </div>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const menuContainer = document.getElementById('menuContainer');
+
+    menuButton.addEventListener('click', () => {
+      if (menuContainer.style.right === '-400px') {
+        menuContainer.style.right = '0';
+      } else {
+        menuContainer.style.right = '-400px';
+      }
+    });
+  </script>
 </body>
-<html>
+</html>
