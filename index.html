@@ -17,8 +17,8 @@
     right: -400px;
     width: 300px;
     height: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color:#333;
+    color: #ffffff;
     padding: 20px;
     transition: right 0.3s ease-in-out;
   }
@@ -26,7 +26,8 @@
   .menu-button {
     position: fixed;
     top: 20px;
-    left: 10px; /* メニューボタンの初期位置を調整 */
+    right: 10px; /* メニューボタンの初期位置を調整 */
+    background-color:#ffffff;
     cursor: pointer;
     z-index: 2;
   }
@@ -40,9 +41,17 @@
 
   .test {
     position: fixed;
-    top: 100px;
+    top: 0px;
     left: 10px;
-    
+  }
+  .test1 {
+    position: fixed;
+    top: 35px;
+    left: 10px;
+  }
+  .ui {
+    color:red;
+    text-decoration: none;
   }
 </style>
 </head>
@@ -52,10 +61,10 @@
   <h1>概要</h1>
   <div class="homepage">これはむうが作成中のホームページです。</div>
     <h2>メニュー</h2>
-    <ul>
-      <li><a href="#1">概要</a></li>
-      <li><a href="#2">あ</a></li>
-      <li><a href="#3">その他</a></li>
+    <ul class="ui">
+      <li><a href="https://google.com">google</a></li>
+      <li><a href="https://youtube.com">youtube</a></li>
+      <li><a href="https://ggrks.world">ggrks</a></li>
     </ul>
   </div>
   <script>
@@ -63,13 +72,23 @@
     const menuContainer = document.getElementById('menuContainer');
 
     menuButton.addEventListener('click', () => {
-      if (menuContainer.style.right === '-400px') {
+      if (menuContainer.style.right === '-350px') {
         menuContainer.style.right = '0';
       } else {
-        menuContainer.style.right = '-400px';
+        menuContainer.style.right = '-350px';
       }
     });
   </script>
-  <div class="test"><h1>test</h1></div>
+    <header>
+      <center>
+      <h1>
+        <a href="">
+          <img src="https://raw.githubusercontent.com/mu7777/mu7777.github.io/main/IMG_3695.webp" width="50" alt="ロゴの名前">
+        </a>
+      </h1>
+      </center>
+    </header>
+  <div class="test"><h1>HELLO</h1></div>
+  <div class="test1"><h1>メニューを開いてみて</h1></div>
 </body>
 </html>
