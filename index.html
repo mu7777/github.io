@@ -1,123 +1,117 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>むうのホームページ</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu-container {
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 300px;
-    height: 100%;
-    background-color:#00c3ff;
-    color: #ffffff;
-    padding: 20px;
-    transition: right 0.3s ease-in-out;
-  }
-
-  .menu-button {
-    position: fixed;
-    top: 20px;
-    right: 10px; /* メニューボタンの初期位置を調整 */
-    background-color:#ffffff;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  /* メニューの文字に赤い枠を追加 */
-  .menu-button{
-    border: 5px solid red;
-    padding: 5px;
-    display: inline-block;
-  }
-
-  .test{
-    position: fixed;    
-    top: 0px;
-    left: 10px;
-  }
-
-  .aaa {
-    position: relative;
-    padding: 1rem 0.25rem;
-    padding-top: 1rem;
-    padding-right: 0.25rem;
-    padding-bottom: 1rem;
-    padding-left: 0.25rem;
-    margin-bottom: 2rem;
-    border: 5px solid #ff0000;
-    border-top-width: 5px;
-    border-right-width: 5px;
-    border-bottom-width: 5px;
-    border-left-width: 5px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: rgb(255, 0, 0);
-    border-right-color: rgb(255, 0, 0);
-    border-bottom-color: rgb(255, 0, 0);
-    border-left-color: rgb(255, 0, 0);
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
-    line-height: 1.2;
-  }
-  .ui {
-    color:red;
-    text-decoration: none;
-  }
-</style>
-</head>
-<body>
-  <div class="menu-button" id="menuButton">メニュー</div>
-  <div class="menu-container" id="menuContainer">
-  <h1>概要</h1>
-  <div class="homepage">これはむうが作成中のホームページです。</div>
-    <h2>メニュー</h2>
-    <ul class="ui">
-      <li><a href="https://google.com">google</a></li>
-      <li><a href="https://youtube.com">youtube</a></li>
-      <li><a href="https://ggrks.world">ggrks</a></li>
-    </ul>
-  </div>
-  <script>
-    const menuButton = document.getElementById('menuButton');
-    const menuContainer = document.getElementById('menuContainer');
-
-    menuButton.addEventListener('click', () => {
-      if (menuContainer.style.right === '-350px') {
-        menuContainer.style.right = '0';
-      } else {
-        menuContainer.style.right = '-350px';
-      }
-    });
-  </script>
-    <header>
-      <center>
-      <h1>
-        <a href="">
-          <img src="https://raw.githubusercontent.com/mu7777/mu7777.github.io/main/IMG_3695.webp" width="50" alt="ロゴの名前">
-        </a>
-      </h1>
-      </center>
-    </header>
-  <div class="test"><h1>むうのホームページへようこそ</h1></div>
-  <hr size="10">
-  <h1><font color="red">メニューを開いてみて</font></h1>
-  <div class="aaa">
-    <p>youtube</p>
-    <p>discord</p>
-  </div>
-</body>
-</html> 
+    <head>
+        <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mu's shop</title>
+        <style>
+            .main{
+                overflow:hidden;
+            }
+            .picture{
+                text-align: center;
+            }
+            .title {
+                color: red;
+            }
+            .menu {
+                /*2px 水色 破線を指定*/
+                border: 2px skyblue dashed;
+            }
+            #menu{
+                color: black;
+                font-family: serif;
+                font-size: 30px;
+                line-height:1;
+            }
+            .service {
+                /*2px 水色 破線を指定*/
+                border: 2px red dashed; 
+            }
+            .youtube{
+                border: 2px red dashed;
+            }
+            .support {
+                color: red;
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            function check(){
+                if (support_form.mail.value == "" && support_form.support.value == ""){
+                    alert("メールアドレスとお問い合わせ内容が入力されていません");    //エラーメッセージを出力
+                    return false;    //送信ボタン本来の動作をキャンセルします
+                }
+                else if (support_form.mail.value== ""){
+                    alert("メールアドレスを入力してください");
+                    return false; 
+                }
+                else if (support_form.support.value == ""){
+                    //条件に一致する場合(メールアドレスが空の場合)
+                    alert("お問い合わせ内容を入力してください");    //エラーメッセージを出力
+                    return false;    //送信ボタン本来の動作をキャンセルします
+                }
+                else if (!support_form.mail.value.includes("@") || !support_form.mail.value.includes(".") || ((support_form.mail.value.match( /@/g ) || [] ).length)>=2 ) {
+                    alert("メールアドレスが不正です。もう一度ご確認ください")
+                    return false;
+                }
+                else if (support_form.support.value.includes("@everyone")) {
+                    alert("@everyoneしないでください。大変迷惑です。")
+                    return false;
+                }
+                else if (support_form.support.value.includes("<@953284875685859380>"||"<@1210213433031794710>")) {
+                    alert("メンションしないでください。大変迷惑です。")
+                    return false;
+                }
+                else{
+                    //条件に一致しない場合(メールアドレスが入力されている場合)
+                    console.log(support_form.support.value)
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST',"https://discord.com/api/webhooks/1220811066938757152/Xu_OOUF7cg1YCGv9aOu19XLCIDVgixNAtNkKSbSUKPP--i4DH7klnwOS93pc_rbucpt7");
+                    xhr.setRequestHeader('Content-type', 'application/json');
+                    // フォームに入力した値をリクエストとして設定
+                    var request = {"username": support_form.mail.value,"content": support_form.support.value}
+                    xhr.send(JSON.stringify(request));
+                    alert("送信に成功しました");
+                    return true;    //送信ボタン本来の動作を実行します
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <a href="">
+                <img class="picture" src="https://github.com/mu7777/picture_storage/blob/main/icon.png?raw=true">
+            </a>
+            <ul class="menu">
+                <h3 id="menu">MENU</h3>
+                <li><a href="C:\Users\takat\Downloads\tsumtsum.html">ツムツム</a></li>
+                <li>にゃんこ大戦争</li>
+                <li>カーパーキング</li>
+                <li>妖怪ウォッチバスターズ</li>
+            </ul>
+            <ul class="service">
+                <h3 id="menu">対応可能チャットアプリ</h3>
+                <p>できればdiscordがいいです</p>
+                <li><a href="https://discord.gg/mu-shop">Discordサーバー</a></li>
+                <!--<li><a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=538xqswp">公式LINE</a></li>-->
+                <li><a href="https://twitter.com/mu_7777dayo">X(twitter)のDM</a></li>
+                <li><a href="https://www.instagram.com/punipuni_daikou7777/">instagramのDM</a></li>
+            </ul>
+            <ul class="youtube">
+                <h3 id="menu">ぜひ見てください</h3>
+                <li><a href="https://www.youtube.com/@mu_xyz">youtube</a></li>
+            </ul>
+            <form name="support_form">
+                <label for="support" class="support">お問い合わせ</label>
+                <br>
+                <label>メールアドレス</label>
+                <input type="text" name="mail" required maxlength="30" cols="10">
+                <br>
+                <label>要件</label>
+                <br>
+                <textarea type="text" name="support" required maxlength="1000" cols="40" rows="8"></textarea>
+                <input type="submit" value="送信" onClick="return check();">
+            </form>
+        </div>
+    </body>
+</html>
